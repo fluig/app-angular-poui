@@ -1,2 +1,5 @@
 target/
+dist/
 node/
+node_modules/
+src/main/webapp/resources/
