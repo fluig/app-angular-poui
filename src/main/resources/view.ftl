@@ -1,3 +1,5 @@
+<#assign coreContext='app_angular_thf'>
+
 <#--
 	Esse parâmetro é utilizado para não exibir as widgets de header, menu, footer e help.
 	É necessário esse tratamento para que não tenha o comportamento de exibir e esconder
@@ -21,7 +23,8 @@
 				<#if !isFullScreen>
 					<@wcm.help />
 				</#if>
-				<!-- Meu APP ROOT -->
+				<link href="/${coreContext}/resources/styles.css" rel="stylesheet"/>
+				<app-root></app-root>
 			</div>
 			<#if !isFullScreen>
 				<@wcm.footer layoutuserlabel="wcm.user.footer" />
@@ -29,3 +32,38 @@
 		</div>
 	</div>
 </div>
+
+<script>
+
+	/**
+	 * The script below sets some enviroment variables to be used inside
+	 * Angular application. (see: app.config.ts)
+	 */
+	(function setEnvironmentParams() {
+
+		var protectedContextPath = '${protectedContextPath!""}';
+		var contextPath = '${contextPath!""}';
+
+		// base url for frontend application
+		var baseUrl = protectedContextPath + '/${tenantCode!""}';
+
+		// replace '/p' for public pages
+		if (window.location.href.indexOf(protectedContextPath) === -1) {
+			baseUrl = baseUrl.replace(protectedContextPath, contextPath);
+		}
+
+		// base url for frontend application
+		window['_app_baseUrl'] = baseUrl;
+
+		// get page code
+		window['_app_pageCode'] = '${(pageCode!"")}';
+
+	})();
+
+</script>
+
+<script type="text/javascript" src="/${coreContext}/resources/runtime.js"></script>
+<script type="text/javascript" src="/${coreContext}/resources/polyfills.js"></script>
+<!-- <script type="text/javascript" src="/${coreContext}/resources/scripts.js"></script> -->
+<script type="text/javascript" src="/${coreContext}/resources/main.js"></script>
+
