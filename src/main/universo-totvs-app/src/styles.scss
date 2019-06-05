@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+
+/**
+ * Overwrites .wcm-all-content padding when
+ * in fullscreen mode (without legacy header/menu)
+ */
+ .wcm-wrapper-content.fs .wcm-all-content {
+  
+  padding: 0px;
+  
+  #wcm-content {
+    padding: 0 !important;
+  }
+}

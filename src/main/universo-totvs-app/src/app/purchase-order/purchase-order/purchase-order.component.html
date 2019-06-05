@@ -1,0 +1,110 @@
+<div class="thf-row">
+  <h1 class="thf-md-12">Cadastro de pedido de compra</h1>
+</div>
+<div class="thf-row">
+  <p class="thf-md-12">Preencha abaixo os detalhes do seu pedido de compra. Não esqueça de selecionar os fornecedores.
+  </p>
+</div>
+<br>
+<form [formGroup]="reactiveForm">
+
+  <div class="thf-row">
+    <thf-input class="thf-md-12" formControlName="name" t-clean t-label="Usuário" t-readonly="true">
+    </thf-input>
+  </div>
+
+  <div class="thf-row">
+    <thf-select class="thf-md-12" formControlName="category" t-clean t-label="Categoria"
+      [t-options]="[{label: 'Option 1', value: '1'}, {label: 'Option 2', value: '2'}]">
+    </thf-select>
+  </div>
+
+  <div class="thf-row">
+    <thf-textarea class="thf-md-12" formControlName="justify" t-clean t-label="Justificativa">
+    </thf-textarea>
+  </div>
+
+  <div class="thf-row">
+    <thf-multiselect class="thf-md-12" formControlName="providers" t-clean t-label="Fornecedores" [t-options]="options">
+    </thf-multiselect>
+  </div>
+
+  <div class="thf-row">
+    <thf-table class="thf-md-12" [t-items]="[{
+        Codigo: 'Totvs Table',
+        Descricao: 'Totvs Table',
+        UM: 'Totvs Table',
+        Fabricante: 'Totvs Table',
+        Quantidade: 'Totvs Table'
+      }, {
+        Codigo: 'Totvs Table',
+        Descricao: 'Totvs Table',
+        UM: 'Totvs Table',
+        Fabricante: 'Totvs Table',
+        Quantidade: 'Totvs Table'
+      }, {
+        Codigo: 'Totvs Table',
+        Descricao: 'Totvs Table',
+        UM: 'Totvs Table',
+        Fabricante: 'Totvs Table',
+        Quantidade: 'Totvs Table'
+      }]">
+    </thf-table>
+  </div>
+
+  <div class="thf-row button-area">
+    <thf-button
+      t-type="primary"
+      class="thf-md-2"
+      t-label="Solicitar cotação"
+      [t-disabled]="!reactiveForm.valid"
+      (t-click)="saveForm()"
+    >
+    </thf-button>
+    <thf-button
+      class="thf-md-2"
+      t-label="Cancelar"
+      (t-click)="cancel()"
+    >
+    </thf-button>
+  </div>
+</form>
+
+<thf-modal #reactiveFormData t-title="Save successful" [t-primary-action]="modalPrimaryAction">
+  <div class="thf-row">
+    <thf-info class="thf-md-12" t-label="Name" [t-value]="reactiveForm.controls.name.value">
+    </thf-info>
+  </div>
+
+  <!-- <hr>
+
+  <div class="thf-row">
+    <thf-info
+      class="thf-md-6"
+      t-label="Address"
+      [t-value]="reactiveForm.controls.address.value">
+    </thf-info>
+
+    <thf-info
+      class="thf-md-6"
+      t-label="Number"
+      [t-value]="reactiveForm.controls.number.value">
+    </thf-info>
+  </div>
+
+  <hr>
+
+  <div class="thf-row">
+    <thf-info
+      class="thf-md-6"
+      t-label="Email"
+      [t-value]="reactiveForm.controls.email.value">
+    </thf-info>
+
+    <thf-info
+      class="thf-md-6"
+      t-label="Website"
+      [t-value]="reactiveForm.controls.website.value">
+    </thf-info>
+  </div> -->
+</thf-modal>

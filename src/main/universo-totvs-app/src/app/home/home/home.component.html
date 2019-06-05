@@ -1,0 +1,46 @@
+<div class="thf-row">
+  <h1 class="thf-md-10">Dashboard da empresa</h1>
+  <thf-button
+    class="thf-md-2 new-purchase-button"
+    t-type="primary"
+    t-label="Novo pedido"
+    (t-click)="newPurchaseOrder()">
+  </thf-button>
+</div>
+<br>
+<div class="thf-row">
+  <thf-widget class="thf-lg-4">
+    <div class="thf-font-subtitle thf-text-center">33% de aumento</div>
+    <div class="thf-text-center">Aumento de 33% na compra de produtos.</div>
+  </thf-widget>
+
+  <thf-widget class="thf-lg-4">
+    <div class="thf-font-subtitle thf-text-center">R$ 660 mil</div>
+    <div class="thf-text-center">Gastos com produtos de escrítorio no ano.</div>
+  </thf-widget>
+
+  <thf-widget class="thf-lg-4">
+    <div class="thf-font-subtitle thf-text-center">Fornecedores</div>
+    <div class="thf-text-center">Dezenas de novos fornecedores cadastrados.</div>
+  </thf-widget>
+</div>
+
+<div class="thf-row">
+  <thf-chart class="thf-lg-6 thf-mt-2" t-title="Top 5 produtos mais caros"
+    [t-series]="lowProducts" (t-series-click)="showMeTheProduct($event)">
+  </thf-chart>
+
+  <thf-chart class="thf-lg-6 thf-mt-2" t-title="Top 5 produtos mais baratos"
+    [t-series]="highProducts" (t-series-click)="showMeTheProduct($event)">
+  </thf-chart>
+</div>
+
+<div class="thf-row">
+  <thf-container class="thf-lg-12 thf-mt-2">
+    <div class="thf-font-text-bold">
+      Top 10 produtos mais solicitados para compra
+    </div>
+    <thf-table t-container="shadow" [t-items]="items">
+    </thf-table>
+  </thf-container>
+</div>
