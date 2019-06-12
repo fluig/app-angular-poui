@@ -64,6 +64,6 @@
 
 <script type="text/javascript" src="/${coreContext}/resources/runtime.js"></script>
 <script type="text/javascript" src="/${coreContext}/resources/polyfills.js"></script>
-<!-- <script type="text/javascript" src="/${coreContext}/resources/scripts.js"></script> -->
+<script type="text/javascript" src="/${coreContext}/resources/scripts.js"></script>
 <script type="text/javascript" src="/${coreContext}/resources/main.js"></script>
 

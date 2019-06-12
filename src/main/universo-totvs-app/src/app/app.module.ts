@@ -5,6 +5,9 @@ import { APP_BASE_HREF } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { APP_CONFIG } from './app.config';
+import { ProcessManagementService } from './services/process-management.service';
+import { FluigOauthService } from './services/fluig-oauth.service';
+import { ProductsConverterService } from './services/products-converter.service';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import { APP_CONFIG } from './app.config';
     AppRoutingModule
   ],
   providers: [
-    { provide: APP_BASE_HREF, useValue: APP_CONFIG.APP_BASE || '/' }
+    { provide: APP_BASE_HREF, useValue: APP_CONFIG.APP_BASE || '/' },
+    ProcessManagementService,
+    FluigOauthService,
+    ProductsConverterService
   ],
   bootstrap: [AppComponent]
 })
