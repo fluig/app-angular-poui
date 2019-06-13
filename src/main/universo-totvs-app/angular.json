@@ -31,7 +31,12 @@
               "node_modules/@totvs/thf-theme/css/thf-theme-default.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "src/scripts/oauth/hmac-sha1.js",
+              "src/scripts/oauth/hmac-sha256.js",
+              "src/scripts/oauth/oauth-1.0a.js",
+              "src/scripts/oauth/enc-base64-min.js"
+            ]
           },
           "configurations": {
             "production": {

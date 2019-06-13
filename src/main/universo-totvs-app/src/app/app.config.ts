@@ -6,7 +6,11 @@ abstract class AppSettings {
   /**
    * base url + application prefix
    */
-  public static APP_BASE = AppSettings.APP_ROOT + '/' + AppSettings.APP_PAGE_CODE;
+
+  public static APP_BASE =
+    AppSettings.APP_ROOT && AppSettings.APP_PAGE_CODE
+    ? AppSettings.APP_ROOT + '/' + AppSettings.APP_PAGE_CODE
+    : '';
 }
 
 export { AppSettings as APP_CONFIG };

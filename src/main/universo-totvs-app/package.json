@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "./node_modules/.bin/ng",
-    "start": "./node_modules/.bin/ng serve --host 0.0.0.0",
+    "start": "./node_modules/.bin/ng serve --host 0.0.0.0 --proxy-config proxy.config.js",
     "build": "./node_modules/.bin/ng build",
     "build-prod": "./node_modules/.bin/ng build --prod --output-hashing none",
     "test": "./node_modules/.bin/ng test",
