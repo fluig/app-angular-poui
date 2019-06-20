@@ -6,26 +6,27 @@ export class ProductsConverterService {
 
   public convertToObject(response): PurchaseRequest {
 
-    // TODO: Fix this
     const purchaseRequest: PurchaseRequest = {};
     const productsMap = {};
     const products = [];
 
-    response.formFields.forEach(item => {
-      if (item.field.indexOf('___') !== -1) {
-        const productSplit = item.field.split('___');
-        if (!productsMap[productSplit[1]]) {
-          productsMap[productSplit[1]] = {};
+    if (response && response.formFields) {
+      response.formFields.forEach(item => {
+        if (item.field.indexOf('___') !== -1) {
+          const productSplit = item.field.split('___');
+          if (!productsMap[productSplit[1]]) {
+            productsMap[productSplit[1]] = {};
+          }
+          productsMap[productSplit[1]][productSplit[0]] = item.value;
+        } else {
+          purchaseRequest[item.field] = item.value;
         }
-        productsMap[productSplit[1]][productSplit[0]] = item.value;
-      } else {
-        purchaseRequest[item.field] = item.value;
-      }
-    });
+      });
 
-    Object.keys(productsMap).forEach(item => {
-      products.push(productsMap[item]);
-    });
+      Object.keys(productsMap).forEach(item => {
+        products.push(productsMap[item]);
+      });
+    }
 
     purchaseRequest.products = products;
 

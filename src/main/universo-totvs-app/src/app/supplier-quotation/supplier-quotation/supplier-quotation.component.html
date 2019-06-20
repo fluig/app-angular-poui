@@ -1,9 +1,51 @@
-<div class="thf-row">
-  <thf-container class="thf-lg-12 thf-mt-2">
-    <div class="thf-font-text-bold">
-      Produtos solicitados para o orçamento
-    </div>
-    <thf-table t-container="shadow" [t-items]="products">
-    </thf-table>
-  </thf-container>
-</div>
+<thf-page-default t-title="Incluir cotação dos produtos">
+  <div class="thf-row thf-mb-2">
+    <ng-container *ngFor="let product of productsList; let i = index" [attr.data-index]="i">
+      <thf-widget class="thf-lg-12 thf-mb-1">
+        <ng-container *ngFor="let item of product">
+          <dl *ngIf="item.key !== 'price'">
+            <dt>{{ literals[item.key] }}</dt>
+            <dd>{{ item.value }}</dd>
+          </dl>
+        </ng-container>
+        <ng-container *ngFor="let item of product">
+          <thf-decimal
+            *ngIf="item.key === 'price'"
+            class="thf-md-3 no-padding thf-mt-1"
+            name="{{ item.key }}-{{ i }}"
+            [(ngModel)]="item.value"
+            t-decimals-length="2"
+            t-icon="thf-icon-finance"
+            [t-label]="literals[item.key]"
+            t-required
+            t-thousand-maxlength="13"
+            [t-disabled]="isSended"
+          >
+          </thf-decimal>
+        </ng-container>
+      </thf-widget>
+    </ng-container>
+  </div>
+  <div class="thf-row thf-mb-2" *ngIf="status">
+      <thf-datepicker
+        [(ngModel)]="sendDate"
+        class="thf-md-3"
+        name="datepicker"
+        t-label="Data de envio"
+        [t-disabled]="isSended">
+      </thf-datepicker>
+  </div>
+  <div class="thf-row thf-mb-2" *ngIf="status">
+    <thf-textarea
+      [(ngModel)]="trackingCode"
+      class="thf-md-3"
+      name="textarea"
+      t-label="Código de rastreio"
+      [t-disabled]="isSended">
+    </thf-textarea>
+  </div>
+  <div class="thf-row thf-mb-2">
+    <thf-button [t-disabled]="isSended" t-type="primary" class="thf-md-2" t-label="Enviar" (t-click)="saveForm()">
+    </thf-button>
+  </div>
+</thf-page-default>
