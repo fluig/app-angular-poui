@@ -312,3 +312,17 @@ Em desenvolvimento...
 ### Menu fluig apontando para rotas Angular
 
 Em desenvolvimento...
+
+
+###  Trabalhando com permissionamento de páginas e componentes
+
+Em desenvolvimento...
+
+
+### Trabalhando com i18n
+
+Em desenvolvimento...
+
+### Trabalhando com páginas públicas
+
+Em desenvolvimento...
