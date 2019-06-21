@@ -18,10 +18,10 @@ export class ProcessManagementService {
     private productsConverter: ProductsConverterService
   ) {}
 
-  public getProcessManagement(WKNumProces): Observable<PurchaseRequest> {
+  public getProcessManagement(WKNumProcess): Observable<PurchaseRequest> {
 
     // tslint:disable-next-line:max-line-length
-    const url = `${this.BASE_URL}/process-management/api/v2/requests?processInstanceId=${WKNumProces}&page=1&pageSize=1000&expand=formFields`;
+    const url = `${this.BASE_URL}/process-management/api/v2/requests?processInstanceId=${WKNumProcess}&page=1&pageSize=1000&expand=formFields`;
 
     const headers = this.getHeaders(url);
 
@@ -41,11 +41,29 @@ export class ProcessManagementService {
     }));
   }
 
-  private getHeaders(url: string, method = 'GET', data = {}) {
+  public moveProcessManagement(WKNumProcess, data): Observable<any> {
+
+    const url = `${this.BASE_URL}/process-management/api/v2/requests/${WKNumProcess}/move`;
+
+    const headers = this.getHeaders(url, 'POST');
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        ...headers
+      })
+    };
+
+    return this.http.post(
+      url,
+      data,
+      httpOptions
+    );
+  }
+
+  private getHeaders(url: string, method = 'GET') {
     return this.fluigOauthService.getOauthHeaders({
       url: url,
-      method: method,
-      data: data
+      method: method
     });
   }
 }
