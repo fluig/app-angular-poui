@@ -19,7 +19,7 @@
             [t-label]="literals[item.key]"
             t-required
             t-thousand-maxlength="13"
-            [t-disabled]="isSended"
+            [t-disabled]="isSended || !!status"
           >
           </thf-decimal>
         </ng-container>
