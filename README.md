@@ -81,7 +81,7 @@ O primeiro `execution` deve realizar a instalação do node e do npm. Então dev
 </execution>
 ```
 
-Depois devemos adicionar todos os passos para executar o build do nosso projeto, com `scripts` npm.
+Depois devemos adicionar todos os passos para executar a instalação e compilação do nosso projeto, chamando os `scripts` npm configurados no **package.json**.
 
 ```xml
 <!-- Registry NPM para encontrar os pacotes do fluig -->
@@ -125,7 +125,7 @@ Depois devemos adicionar todos os passos para executar o build do nosso projeto,
 
 Commit: [Configurando outputPath e deployUrl para funcionamento no layout.](https://github.com/fluig/app-angular-thf/commit/5bc26ab8bbaaa68ba72f8c6b444558b75678001c)
 
-Devemos agora configurar o APP Angular para funcionar dentro do layout, para isso, vamos alterar a confiruração dos parâmetros `outputPath` e `deployUrl`.
+Devemos agora configurar o APP Angular para funcionar dentro do layout, para isso, vamos alterar a confiruração dos parâmetros `outputPath` e `deployUrl` do arquivo [angular.json](https://github.com/fluig/app-angular-thf/blob/master/src/main/universo-totvs-app/angular.json).
 
 **outputPath**:
 
@@ -159,7 +159,7 @@ providers: [
 ],
 ```
 
-Isso garante que o APP funcione em qualquer rota ou página do fluig, inclusive páginas públicas.
+Isso garante que o APP funcione em qualquer rota ou página do fluig, inclusive em páginas públicas.
 
 
 ### Passo 6 - Configurando view.ftl
@@ -310,5 +310,19 @@ Em desenvolvimento...
 
 
 ### Menu fluig apontando para rotas Angular
+
+Em desenvolvimento...
+
+
+###  Trabalhando com permissionamento de páginas e componentes
+
+Em desenvolvimento...
+
+
+### Trabalhando com i18n
+
+Em desenvolvimento...
+
+### Trabalhando com páginas públicas
 
 Em desenvolvimento...
