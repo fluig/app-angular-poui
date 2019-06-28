@@ -5,10 +5,14 @@
  * in fullscreen mode (without legacy header/menu)
  */
  .wcm-wrapper-content.fs .wcm-all-content {
-  
+
   padding: 0px;
-  
+
   #wcm-content {
     padding: 0 !important;
   }
+}
+
+.fl-header .fl-edit-button .dropdown-menu {
+  left: inherit !important;
 }
