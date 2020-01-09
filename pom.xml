@@ -39,15 +39,6 @@
 						<phase>generate-resources</phase>
 					</execution>
 					<execution>
-						<id>npm set registry</id>
-						<goals>
-							<goal>npm</goal>
-						</goals>
-						<configuration>
-							<arguments>set registry http://nexus.fluig.com/repository/npm-group/</arguments>
-						</configuration>
-					</execution>
-					<execution>
 						<id>npm install</id>
 						<goals>
 							<goal>npm</goal>
