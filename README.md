@@ -56,7 +56,13 @@ http://tdn.totvs.com/pages/releaseview.action?pageId=73078179
 
 Commit: [Adicionando APP angular no layout.](https://github.com/fluig/app-angular-thf/commit/727c11839f0c78154dfcf8fe539642f1a9b90651)
 
-Essa etapa é relativamente simples. No terminal, dentro do diretório `src/main/` devemos executar o comando:
+Caso você ainda não tenha instalado o pacote @angular/cli, instale-o via npm.
+
+```bash
+npm i -g @angular/cli@9.1.0
+```
+
+Essa próxima etapa é relativamente simples. No terminal, dentro do diretório `src/main/` devemos executar o comando:
 
 ```javascript
 ng new <NOME_DO_APP> --skip-install
@@ -189,11 +195,12 @@ Devemos adicionar também os bundles padrões do Angular.
 
 ...
 <!-- JS -->
-<script type="text/javascript" src="/${coreContext}/resources/runtime.js"></script>
-<script type="text/javascript" src="/${coreContext}/resources/polyfills.js"></script>
+<script src="/${coreContext}/resources/runtime.js" defer></script>
+<script src="/${coreContext}/resources/polyfills-es5.js" nomodule defer></script>
+<script src="/${coreContext}/resources/polyfills.js" defer></script>
 <!-- scripts.js será usado somente se for adicionado algum script no angular.json do APP -->
-<script type="text/javascript" src="/${coreContext}/resources/scripts.js"></script>
-<script type="text/javascript" src="/${coreContext}/resources/main.js"></script>
+<script src="/${coreContext}/resources/scripts.js" defer></script>
+<script src="/${coreContext}/resources/main.js" defer></script>
 ```
 
 Precisamos também configurar alguns parâmentros do fluig para que sejam enviados para o APP angular.
@@ -270,7 +277,7 @@ npm install
 
 Após a execução deverá conter a pasta **node_modules** em seu projeto com as dependências necessárias.
 
-Em seguida instale o PO UI, para isso, execute o seguinte comando:
+Utilizando o comando ng add do Angular CLI, vamos adicionar o Po em seu projeto e o mesmo se encarregará de configurar o tema, instalar o pacote e importar o módulo do Po. Para isso, execute o seguinte comando:
 
 ```bash
 ng add @po-ui/ng-components
