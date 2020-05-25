@@ -18,7 +18,7 @@
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "../webapp/resources",
-            "deployUrl": "/app_angular_thf/resources/",
+            "deployUrl": "/app_angular_poui/resources/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",

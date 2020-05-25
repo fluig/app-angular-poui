@@ -1,4 +1,4 @@
-<#assign coreContext='app_angular_thf'>
+<#assign coreContext='app_angular_poui'>
 
 <#--
 	Esse parâmetro é utilizado para não exibir as widgets de header, menu, footer e help.

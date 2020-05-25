@@ -3,13 +3,13 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-	<artifactId>app_angular_thf</artifactId>
-	<groupId>com.fluig.thf</groupId>
+	<artifactId>app_angular_poui</artifactId>
+	<groupId>com.fluig.poui</groupId>
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
-	<name>Universo TOTVS APP THF</name>
-	<description>Universo TOTVS APP THF</description>
+	<name>Universo TOTVS APP PO UI</name>
+	<description>Universo TOTVS APP PO UI</description>
 
 	<build>
 		<plugins>
