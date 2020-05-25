@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 import { PurchaseOrderRoutingModule } from './purchase-order.routing.module';
-import { ThfModule } from '@totvs/thf-ui';
+import { PoModule } from '@po-ui/ng-components';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { ThfModule } from '@totvs/thf-ui';
     PurchaseOrderRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ThfModule
+    PoModule
   ],
   exports: [
     PurchaseOrderComponent

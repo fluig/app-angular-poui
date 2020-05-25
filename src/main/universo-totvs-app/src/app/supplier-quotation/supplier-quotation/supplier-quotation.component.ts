@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProcessManagementService } from 'src/app/services/process-management.service';
-import { ThfNotificationService, ThfDialogService, ThfToasterOrientation } from '@totvs/thf-ui';
+import { PoNotificationService, PoDialogService, PoToasterOrientation } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-supplier-quotation',
@@ -43,8 +43,8 @@ export class SupplierQuotationComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private thfNotification: ThfNotificationService,
-    private thfDialog: ThfDialogService,
+    private poNotification: PoNotificationService,
+    private poDialog: PoDialogService,
     private processManagementService: ProcessManagementService
   ) { }
 
@@ -103,9 +103,9 @@ export class SupplierQuotationComponent implements OnInit {
   }
 
   showToasterMessage(message, type = 'success'): void {
-    this.thfNotification[type]({
+    this.poNotification[type]({
       message: message,
-      orientation: ThfToasterOrientation.Top
+      orientation: PoToasterOrientation.Top
     });
   }
 
@@ -116,7 +116,7 @@ export class SupplierQuotationComponent implements OnInit {
   saveForm() {
 
     if (this.hasFieldEmpty()) {
-      this.thfDialog.alert({
+      this.poDialog.alert({
         title: this.literals.warning,
         message: this.literals.error_empty_fields
       });
@@ -124,7 +124,7 @@ export class SupplierQuotationComponent implements OnInit {
     }
 
     if (this.status && this.hasSendOptionsEmpty()) {
-      this.thfDialog.alert({
+      this.poDialog.alert({
         title: this.literals.warning,
         message: this.literals.error_empty_send_options
       });
