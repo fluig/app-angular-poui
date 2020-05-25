@@ -1,8 +1,8 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { ThfModalAction, ThfModalComponent } from '@totvs/thf-ui/components/thf-modal';
-import { ThfMultiselectOption } from '@totvs/thf-ui/components/thf-field';
+import { PoModalAction, PoModalComponent } from '@po-ui/ng-components';
+import { PoMultiselectOption } from '@po-ui/ng-components';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,19 +13,19 @@ import { Router } from '@angular/router';
 export class PurchaseOrderComponent implements OnInit {
 
   reactiveForm: FormGroup;
-  options: Array<ThfMultiselectOption> = [
+  options: Array<PoMultiselectOption> = [
     { value: 'fornecedor1', label: 'Paper And Crafts & Arts' },
     { value: 'fornecedor2', label: 'Sorveio e Sives S.A.' },
     { value: 'fornecedor3', label: 'Kormex Comércio e Indústria Gráfica Ltda.' },
     { value: 'fornecedor4', label: 'Contabilista' }
   ];
 
-  public readonly modalPrimaryAction: ThfModalAction = {
+  public readonly modalPrimaryAction: PoModalAction = {
     action: () => this.reactiveFormModal.close(),
     label: 'Close'
   };
 
-  @ViewChild('reactiveFormData') reactiveFormModal: ThfModalComponent;
+  @ViewChild('reactiveFormData') reactiveFormModal: PoModalComponent;
 
   constructor(
     private fb: FormBuilder,

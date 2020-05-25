@@ -1,7 +1,7 @@
-<thf-page-default t-title="Incluir cotação dos produtos">
-  <div class="thf-row thf-mb-2">
+<po-page-default p-title="Incluir cotação dos produtos">
+  <div class="po-row po-mb-2">
     <ng-container *ngFor="let product of productsList; let i = index" [attr.data-index]="i">
-      <thf-widget class="thf-lg-12 thf-mb-1">
+      <po-widget class="po-lg-12 po-mb-1">
         <ng-container *ngFor="let item of product">
           <dl *ngIf="item.key !== 'price'">
             <dt>{{ literals[item.key] }}</dt>
@@ -9,43 +9,43 @@
           </dl>
         </ng-container>
         <ng-container *ngFor="let item of product">
-          <thf-decimal
+          <po-decimal
             *ngIf="item.key === 'price'"
-            class="thf-md-3 no-padding thf-mt-1"
+            class="po-md-3 no-padding po-mt-1"
             name="{{ item.key }}-{{ i }}"
             [(ngModel)]="item.value"
-            t-decimals-length="2"
-            t-icon="thf-icon-finance"
-            [t-label]="literals[item.key]"
-            t-required
-            t-thousand-maxlength="13"
-            [t-disabled]="isSended || !!status"
+            p-decimals-length="2"
+            p-icon="po-icon-finance"
+            [p-label]="literals[item.key]"
+            p-required
+            p-thousand-maxlength="13"
+            [p-disabled]="isSended || !!status"
           >
-          </thf-decimal>
+          </po-decimal>
         </ng-container>
-      </thf-widget>
+      </po-widget>
     </ng-container>
   </div>
-  <div class="thf-row thf-mb-2" *ngIf="status">
-      <thf-datepicker
+  <div class="po-row po-mb-2" *ngIf="status">
+      <po-datepicker
         [(ngModel)]="sendDate"
-        class="thf-md-3"
+        class="po-md-3"
         name="datepicker"
-        t-label="Data de envio"
-        [t-disabled]="isSended">
-      </thf-datepicker>
+        p-label="Data de envio"
+        [p-disabled]="isSended">
+      </po-datepicker>
   </div>
-  <div class="thf-row thf-mb-2" *ngIf="status">
-    <thf-textarea
+  <div class="po-row po-mb-2" *ngIf="status">
+    <po-textarea
       [(ngModel)]="trackingCode"
-      class="thf-md-3"
+      class="po-md-3"
       name="textarea"
-      t-label="Código de rastreio"
-      [t-disabled]="isSended">
-    </thf-textarea>
+      p-label="Código de rastreio"
+      [p-disabled]="isSended">
+    </po-textarea>
   </div>
-  <div class="thf-row thf-mb-2">
-    <thf-button [t-disabled]="isSended" t-type="primary" class="thf-md-2" t-label="Enviar" (t-click)="saveForm()">
-    </thf-button>
+  <div class="po-row po-mb-2">
+    <po-button [p-disabled]="isSended" p-type="primary" class="po-md-2" p-label="Enviar" (p-click)="saveForm()">
+    </po-button>
   </div>
-</thf-page-default>
+</po-page-default>

@@ -1,46 +1,46 @@
-<div class="thf-row">
-  <h1 class="thf-md-10">Dashboard da empresa</h1>
-  <thf-button
-    class="thf-md-2 new-purchase-button"
-    t-type="primary"
-    t-label="Novo pedido"
-    (t-click)="newPurchaseOrder()">
-  </thf-button>
+<div class="po-row">
+  <h1 class="po-md-10">Dashboard da empresa</h1>
+  <po-button
+    class="po-md-2 new-purchase-button"
+    p-type="primary"
+    p-label="Novo pedido"
+    (p-click)="newPurchaseOrder()">
+  </po-button>
 </div>
 <br>
-<div class="thf-row">
-  <thf-widget class="thf-lg-4">
-    <div class="thf-font-subtitle thf-text-center">33% de aumento</div>
-    <div class="thf-text-center">Aumento de 33% na compra de produtos.</div>
-  </thf-widget>
+<div class="po-row">
+  <po-widget class="po-lg-4">
+    <div class="po-font-subtitle po-text-center">33% de aumento</div>
+    <div class="po-text-center">Aumento de 33% na compra de produtos.</div>
+  </po-widget>
 
-  <thf-widget class="thf-lg-4">
-    <div class="thf-font-subtitle thf-text-center">R$ 660 mil</div>
-    <div class="thf-text-center">Gastos com produtos de escrítorio no ano.</div>
-  </thf-widget>
+  <po-widget class="po-lg-4">
+    <div class="po-font-subtitle po-text-center">R$ 660 mil</div>
+    <div class="po-text-center">Gastos com produtos de escrítorio no ano.</div>
+  </po-widget>
 
-  <thf-widget class="thf-lg-4">
-    <div class="thf-font-subtitle thf-text-center">Fornecedores</div>
-    <div class="thf-text-center">Dezenas de novos fornecedores cadastrados.</div>
-  </thf-widget>
+  <po-widget class="po-lg-4">
+    <div class="po-font-subtitle po-text-center">Fornecedores</div>
+    <div class="po-text-center">Dezenas de novos fornecedores cadastrados.</div>
+  </po-widget>
 </div>
 
-<div class="thf-row">
-  <thf-chart class="thf-lg-6 thf-mt-2" t-title="Top 5 produtos mais caros"
-    [t-series]="lowProducts" (t-series-click)="showMeTheProduct($event)">
-  </thf-chart>
+<div class="po-row">
+  <po-chart class="po-lg-6 po-mt-2" p-title="Top 5 produtos mais caros"
+    [p-series]="lowProducts" (p-series-click)="showMeTheProduct($event)">
+  </po-chart>
 
-  <thf-chart class="thf-lg-6 thf-mt-2" t-title="Top 5 produtos mais baratos"
-    [t-series]="highProducts" (t-series-click)="showMeTheProduct($event)">
-  </thf-chart>
+  <po-chart class="po-lg-6 po-mt-2" p-title="Top 5 produtos mais baratos"
+    [p-series]="highProducts" (p-series-click)="showMeTheProduct($event)">
+  </po-chart>
 </div>
 
-<div class="thf-row">
-  <thf-container class="thf-lg-12 thf-mt-2">
-    <div class="thf-font-text-bold">
+<div class="po-row">
+  <po-container class="po-lg-12 po-mt-2">
+    <div class="po-font-text-bold">
       Top 10 produtos mais solicitados para compra
     </div>
-    <thf-table t-container="shadow" [t-items]="items">
-    </thf-table>
-  </thf-container>
+    <po-table p-container="shadow" [p-items]="items">
+    </po-table>
+  </po-container>
 </div>

@@ -4,7 +4,7 @@ import { SupplierQuotationComponent } from './supplier-quotation/supplier-quotat
 import { SupplierQuotationRoutingModule } from './supplier-quotation.routing.module';
 import { ProcessManagementService } from '../services/process-management.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ThfModule } from '@totvs/thf-ui';
+import { PoModule } from '@po-ui/ng-components';
 
 @NgModule({
   declarations: [
@@ -15,7 +15,7 @@ import { ThfModule } from '@totvs/thf-ui';
     SupplierQuotationRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    ThfModule
+    PoModule
   ],
   exports: [
     SupplierQuotationComponent

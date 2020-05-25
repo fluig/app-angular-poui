@@ -62,8 +62,8 @@
 
 </script>
 
-<script type="text/javascript" src="/${coreContext}/resources/runtime.js"></script>
-<script type="text/javascript" src="/${coreContext}/resources/polyfills.js"></script>
-<script type="text/javascript" src="/${coreContext}/resources/scripts.js"></script>
-<script type="text/javascript" src="/${coreContext}/resources/main.js"></script>
-
+<script src="/${coreContext}/resources/runtime.js" defer></script>
+<script src="/${coreContext}/resources/polyfills-es5.js" nomodule defer></script>
+<script src="/${coreContext}/resources/polyfills.js" defer></script>
+<script src="/${coreContext}/resources/scripts.js" defer></script>
+<script src="/${coreContext}/resources/main.js" defer></script>

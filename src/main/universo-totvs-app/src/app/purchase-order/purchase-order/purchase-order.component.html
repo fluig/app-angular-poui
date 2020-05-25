@@ -1,36 +1,36 @@
-<div class="thf-row">
-  <h1 class="thf-md-12">Cadastro de pedido de compra</h1>
+<div class="po-row">
+  <h1 class="po-md-12">Cadastro de pedido de compra</h1>
 </div>
-<div class="thf-row">
-  <p class="thf-md-12">Preencha abaixo os detalhes do seu pedido de compra. Não esqueça de selecionar os fornecedores.
+<div class="po-row">
+  <p class="po-md-12">Preencha abaixo os detalhes do seu pedido de compra. Não esqueça de selecionar os fornecedores.
   </p>
 </div>
 <br>
 <form [formGroup]="reactiveForm">
 
-  <div class="thf-row">
-    <thf-input class="thf-md-12" formControlName="name" t-clean t-label="Usuário" t-readonly="true">
-    </thf-input>
+  <div class="po-row">
+    <po-input class="po-md-12" formControlName="name" p-clean p-label="Usuário" p-readonly="true">
+    </po-input>
   </div>
 
-  <div class="thf-row">
-    <thf-select class="thf-md-12" formControlName="category" t-clean t-label="Categoria"
-      [t-options]="[{label: 'Option 1', value: '1'}, {label: 'Option 2', value: '2'}]">
-    </thf-select>
+  <div class="po-row">
+    <po-select class="po-md-12" formControlName="category" p-clean p-label="Categoria"
+      [p-options]="[{label: 'Option 1', value: '1'}, {label: 'Option 2', value: '2'}]">
+    </po-select>
   </div>
 
-  <div class="thf-row">
-    <thf-textarea class="thf-md-12" formControlName="justify" t-clean t-label="Justificativa">
-    </thf-textarea>
+  <div class="po-row">
+    <po-textarea class="po-md-12" formControlName="justify" p-clean p-label="Justificativa">
+    </po-textarea>
   </div>
 
-  <div class="thf-row">
-    <thf-multiselect class="thf-md-12" formControlName="providers" t-clean t-label="Fornecedores" [t-options]="options">
-    </thf-multiselect>
+  <div class="po-row">
+    <po-multiselect class="po-md-12" formControlName="providers" p-clean p-label="Fornecedores" [p-options]="options">
+    </po-multiselect>
   </div>
 
-  <div class="thf-row">
-    <thf-table class="thf-md-12" [t-items]="[{
+  <div class="po-row">
+    <po-table class="po-md-12" [p-items]="[{
         Codigo: 'Totvs Table',
         Descricao: 'Totvs Table',
         UM: 'Totvs Table',
@@ -49,62 +49,62 @@
         Fabricante: 'Totvs Table',
         Quantidade: 'Totvs Table'
       }]">
-    </thf-table>
+    </po-table>
   </div>
 
-  <div class="thf-row button-area">
-    <thf-button
-      t-type="primary"
-      class="thf-md-2"
-      t-label="Solicitar cotação"
-      [t-disabled]="!reactiveForm.valid"
-      (t-click)="saveForm()"
+  <div class="po-row button-area">
+    <po-button
+      p-type="primary"
+      class="po-md-2"
+      p-label="Solicitar cotação"
+      [p-disabled]="!reactiveForm.valid"
+      (p-click)="saveForm()"
     >
-    </thf-button>
-    <thf-button
-      class="thf-md-2"
-      t-label="Cancelar"
-      (t-click)="cancel()"
+    </po-button>
+    <po-button
+      class="po-md-2"
+      p-label="Cancelar"
+      (p-click)="cancel()"
     >
-    </thf-button>
+    </po-button>
   </div>
 </form>
 
-<thf-modal #reactiveFormData t-title="Save successful" [t-primary-action]="modalPrimaryAction">
-  <div class="thf-row">
-    <thf-info class="thf-md-12" t-label="Name" [t-value]="reactiveForm.controls.name.value">
-    </thf-info>
+<po-modal #reactiveFormData p-title="Save successful" [p-primary-action]="modalPrimaryAction">
+  <div class="po-row">
+    <po-info class="po-md-12" p-label="Name" [p-value]="reactiveForm.controls.name.value">
+    </po-info>
   </div>
 
   <!-- <hr>
 
-  <div class="thf-row">
-    <thf-info
-      class="thf-md-6"
-      t-label="Address"
-      [t-value]="reactiveForm.controls.address.value">
-    </thf-info>
+  <div class="po-row">
+    <po-info
+      class="po-md-6"
+      p-label="Address"
+      [p-value]="reactiveForm.controls.address.value">
+    </po-info>
 
-    <thf-info
-      class="thf-md-6"
-      t-label="Number"
-      [t-value]="reactiveForm.controls.number.value">
-    </thf-info>
+    <po-info
+      class="po-md-6"
+      p-label="Number"
+      [p-value]="reactiveForm.controls.number.value">
+    </po-info>
   </div>
 
   <hr>
 
-  <div class="thf-row">
-    <thf-info
-      class="thf-md-6"
-      t-label="Email"
-      [t-value]="reactiveForm.controls.email.value">
-    </thf-info>
+  <div class="po-row">
+    <po-info
+      class="po-md-6"
+      p-label="Email"
+      [p-value]="reactiveForm.controls.email.value">
+    </po-info>
 
-    <thf-info
-      class="thf-md-6"
-      t-label="Website"
-      [t-value]="reactiveForm.controls.website.value">
-    </thf-info>
+    <po-info
+      class="po-md-6"
+      p-label="Website"
+      [p-value]="reactiveForm.controls.website.value">
+    </po-info>
   </div> -->
-</thf-modal>
+</po-modal>

@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ThfChartType } from '@totvs/thf-ui/components/thf-chart/enums/thf-chart-type.enum';
-import { ThfDialogService } from '@totvs/thf-ui/services/thf-dialog';
-import { ThfPieChartSeries } from '@totvs/thf-ui/components/thf-chart/interfaces/thf-chart-series.interface';
+import { PoChartType } from '@po-ui/ng-components';
+import { PoDialogService } from '@po-ui/ng-components';
+import { PoPieChartSeries } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-home',
@@ -10,9 +10,9 @@ import { ThfPieChartSeries } from '@totvs/thf-ui/components/thf-chart/interfaces
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  chartType: ThfChartType = ThfChartType.Pie;
+  chartType: PoChartType = PoChartType.Pie;
 
-  lowProducts: Array<ThfPieChartSeries> = [
+  lowProducts: Array<PoPieChartSeries> = [
     { category: 'Envelope 16x22', value: 0.2, tooltip: 'Envelope 16x22 (Escritório)' },
     { category: 'Grafite 0.5mm', value: 0.29, tooltip: 'Grafite 0.5mm (Escritório)' },
     { category: 'Lápis de escrever', value: 0.32, tooltip: 'Lápis de escrever (Escritório)' },
@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
     { category: 'Caneta Preta', value: 0.62, tooltip: 'Caneta Preta (Escritório)' }
   ];
 
-  highProducts: Array<ThfPieChartSeries> = [
+  highProducts: Array<PoPieChartSeries> = [
     { category: 'Calculadora Científica', value: 50.29, tooltip: 'Calculadora Científica (Escritório)' },
     { category: 'Apagador', value: 6.53, tooltip: 'Apagador (Escritório)' },
     { category: 'Papel A4 - 500 Folhas', value: 6.22, tooltip: 'Papel A4 - 500 Folhas (Escritório)' },
@@ -92,14 +92,14 @@ export class HomeComponent implements OnInit {
   ];
 
   constructor(
-    private thfAlert: ThfDialogService,
+    private poAlert: PoDialogService,
     private router: Router
   ) {}
 
   ngOnInit() {}
 
   showMeTheProduct(event: any) {
-    this.thfAlert.alert({
+    this.poAlert.alert({
       title: 'Detalhes do produto',
       message: `O produto ${event.category} custa R$ ${event.value}.`,
       ok: () => {}
