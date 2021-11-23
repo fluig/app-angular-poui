@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "universo-totvs-app": {
+    "angular-app": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -73,18 +73,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "universo-totvs-app:build"
+            "browserTarget": "angular-app:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "universo-totvs-app:build:production"
+              "browserTarget": "angular-app:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "universo-totvs-app:build"
+            "browserTarget": "angular-app:build"
           }
         },
         "test": {
@@ -122,17 +122,17 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "universo-totvs-app:serve"
+            "devServerTarget": "angular-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "universo-totvs-app:serve:production"
+              "devServerTarget": "angular-app:serve:production"
             }
           }
         }
       }
     },
-    "universo-totvs-app-e2e": {
+    "angular-app-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -141,11 +141,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "universo-totvs-app:serve"
+            "devServerTarget": "angular-app:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "universo-totvs-app:serve:production"
+              "devServerTarget": "angular-app:serve:production"
             }
           }
         },
@@ -161,5 +161,5 @@
       }
     }
   },
-  "defaultProject": "universo-totvs-app"
+  "defaultProject": "angular-app"
 }

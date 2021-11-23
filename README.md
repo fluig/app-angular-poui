@@ -2,14 +2,14 @@
 
 O objetivo desse repositório é mostrar uma **técnica** de como adicionar uma aplicação com Angular + PO UI no fluig.
 
-Essa técnica consiste em criar um *layout* e adicionar uma aplicação angular dentro dele. Posteriormente podemos criar ou editar uma página e adicionar ele *layout* nela.
+Essa técnica consiste em criar uma *widget* e adicionar uma aplicação angular dentro dela. Posteriormente podemos criar ou editar uma página e adicionar essa *widget* nela.
 
 Abaixo estão os passos necessários para realizar essa técnica com todas as configurações necessárias.
 
 ---
 **NOTA**
 
-Este projeto não possui suporte técnico do time do Fluig. Ele é somente um exemplo de como podemos adicionar uma aplicação Angular utilizando a biblioteca PO UI dentro da plataforma Fluig.  Ele não é atualizado constantemente e pode ficar depreciado ao longo do tempo. Sinta-se à vontade para colaborar com esse repositório e ajudar a evoluí-lo.
+Essa é uma **Versão Beta** de uma widget utilizando o framework Angular. Este projeto não possui suporte técnico do time do Fluig. Ele é somente um exemplo de como podemos adicionar uma aplicação Angular utilizando a biblioteca PO UI dentro do Fluig Plataforma. Ele não é atualizado constantemente e pode ficar depreciado ao longo do tempo. Sinta-se à vontade para colaborar com esse repositório e ajudar a evoluí-lo.
 
 ---
 
@@ -31,7 +31,7 @@ Para executar esse projeto de exemplo, devemos executar somente o comando a segu
 mvn clean install
 ```
 
-Após a execução, é necessário realizar o deploy do artefato **app_angular_poui.war** pela [Central de Componentes](http://tdn.totvs.com/display/public/fluig/Central+de+componentes) do fluig. Depois, basta criar ou editar uma página já existente e trocar o layout pelo **Universo TOTVS APP PO UI**.
+Após a execução, é necessário realizar o deploy do artefato **app_angular_poui.war** pela [Central de Componentes](http://tdn.totvs.com/display/public/fluig/Central+de+componentes) do fluig. Depois, basta criar ou editar uma página já existente e adicionar a widget **Angular APP PO UI**.
 
 Abaixo foi disponibilizado uma documentação detalhada de como criar esse projeto.
 
@@ -39,22 +39,18 @@ Abaixo foi disponibilizado uma documentação detalhada de como criar esse proje
 ## Passo a passo
 
 
-### Passo 1 - Criando o layout
+### Passo 1 - Criando a widget
 
-Commit: [Adicionando layout base para a aplicação.](https://github.com/fluig/app-angular-thf/commit/11a4f34d351e5e95b81011b0c43da12f30c522bb)
+Podemos criar uma widget de duas formas. Pela **documentação oficial** ou através do *plugin* para a IDE Eclipse, **fluig Studio**.
 
-Podemos criar um layout através de duas formas. Pela **documentação oficial** ou através do *plugin* para a IDE Eclipse, **fluig Studio**.
-
-Documentação de criação de um layout:
-http://tdn.totvs.com/display/public/fluig/Layouts
+Documentação de criação de um widget:
+http://tdn.totvs.com/display/public/fluig/Widgets
 
 Guia de instalação fluig Studio:
 http://tdn.totvs.com/pages/releaseview.action?pageId=73078179
 
 
 ### Passo 2 - Adicionando o APP Angular
-
-Commit: [Adicionando APP angular no layout.](https://github.com/fluig/app-angular-thf/commit/727c11839f0c78154dfcf8fe539642f1a9b90651)
 
 Caso você ainda não tenha instalado o pacote @angular/cli, instale-o via npm.
 
@@ -72,8 +68,6 @@ O parâmetro `--skip-install` permite criar o projeto, contudo, não instalará 
 
 
 ### Passo 3 - Configurando o plugin maven
-
-Commit: [Configurando o plugin maven para realizar a instalação e compilação do projeto.](https://github.com/fluig/app-angular-thf/commit/1c8f780eb17cfdc1b716784b9078b8c276855ec3)
 
 Após adicionar o APP Angular, devemos configurar o plugin [frontend-maven-plugin](https://github.com/eirslett/frontend-maven-plugin) para realizar o gerenciamento da versão do Node, instalação e compilação do projeto.
 
@@ -131,14 +125,13 @@ Depois devemos adicionar todos os passos para executar a instalação e compila�
 </execution>
 ```
 
-[Veja a configuração final aqui.](https://github.com/fluig/app-angular-thf/blob/master/pom.xml#L14)
+[Veja a configuração final aqui.](https://github.com/fluig/app-angular-poui/blob/master/pom.xml#L14)
 
 
 ### Passo 4 - Configurando APP Angular
 
-Commit: [Configurando outputPath e deployUrl para funcionamento no layout.](https://github.com/fluig/app-angular-thf/commit/5bc26ab8bbaaa68ba72f8c6b444558b75678001c)
 
-Devemos agora configurar o APP Angular para funcionar dentro do layout, para isso, vamos alterar a confiruração dos parâmetros `outputPath` e `deployUrl` do arquivo [angular.json](https://github.com/fluig/app-angular-thf/blob/master/src/main/universo-totvs-app/angular.json).
+Devemos agora configurar o APP Angular para funcionar dentro da widget, para isso, vamos alterar a confiruração dos parâmetros `outputPath` e `deployUrl` do arquivo [angular.json](https://github.com/fluig/app-angular-poui/blob/master/src/main/angular-app/angular.json).
 
 **outputPath**:
 
@@ -152,14 +145,13 @@ Devemos agora configurar o APP Angular para funcionar dentro do layout, para iss
 "deployUrl": "/app_angular_poui/resources/",
 ```
 
-**Atenção:** O valor **app_angular_poui** obrigatoriamente precisa ser o **code** do layout.
+**Atenção:** O valor **app_angular_poui** obrigatoriamente precisa ser o **code** da widget.
 
 
 ### Passo 5 - Configurando APP para Paths dinâmicos
 
-Commit: [Configurando APP para funcionar em paths dinâmicos.](https://github.com/fluig/app-angular-thf/commit/7c48b71d7af56d739b0feb3f3596ef0a4b3ad840)
 
-Precisamos primeiro adicionar o arquivo [app.config.ts](https://github.com/fluig/app-angular-thf/blob/master/src/main/universo-totvs-app/src/app/app.config.ts) no projeto e depois configurar no módulo principal da nossa aplicação.
+Precisamos primeiro adicionar o arquivo [app.config.ts](https://github.com/fluig/app-angular-poui/blob/master/src/main/angular-app/src/app/app.config.ts) no projeto e depois configurar no módulo principal da nossa aplicação.
 
 ```ts
 ...
@@ -177,9 +169,8 @@ Isso garante que o APP funcione em qualquer rota ou página do fluig, inclusive 
 
 ### Passo 6 - Configurando view.ftl
 
-Commit: [Adicionando tag principal e bundles do app no view.ftl do layout.](https://github.com/fluig/app-angular-thf/commit/ce738216ba9d74499a928e47b3d91abd08eb6a93)
 
-Agora precisamos adicionar a tag principal da aplicação na **view.ftl** do layout. Esse arquivo se comportará como o **index.html** de uma aplicação Angular padrão.
+Agora precisamos adicionar a tag principal da aplicação na **view.ftl** da widget. Esse arquivo se comportará como o **index.html** de uma aplicação Angular padrão.
 
 ```html
 ...
@@ -229,12 +220,9 @@ Precisamos também configurar alguns parâmentros do fluig para que sejam enviad
 </script>
 ```
 
-Esses parâmetros serão obtidos pelo arquivo [app.config.ts](https://github.com/fluig/app-angular-thf/blob/master/src/main/universo-totvs-app/src/app/app.config.ts). [Veja a configuração final aqui.](https://github.com/fluig/app-angular-thf/blob/master/src/main/resources/view.ftl)
+Esses parâmetros serão obtidos pelo arquivo [app.config.ts](https://github.com/fluig/app-angular-poui/blob/master/src/main/angular-app/src/app/app.config.ts). [Veja a configuração final aqui.](https://github.com/fluig/app-angular-poui/blob/master/src/main/resources/view.ftl)
 
 ### Passo 7 - Adicionando PO UI na aplicação
-
-Commit: [Adicionando PO UI na aplicação.](https://github.com/fluig/app-angular-thf/commit/9c306cdec8f57e2b8a91769afffbe756b86d7e64)
-
 
 Agora podemos adicionar o PO UI em nosso APP. Para mais detalhes, acesse a [documentação oficial de instalação do PO UI](https://po-ui.io/guides/getting-started).
 
@@ -314,30 +302,3 @@ import { PoModule } from '@po-ui/ng-components';
 ```
 
 Pronto, agora temos uma aplicação Angular com PO UI configurada. Podemos agora executar o comando `mvn clean install` na raiz do nosso projeto e depois realizar o deploy dele no fluig.
-
-
-## Dicas
-
-
-### Trabalhando em modo de desenvolvimento
-
-Em desenvolvimento...
-
-
-### Menu fluig apontando para rotas Angular
-
-Em desenvolvimento...
-
-
-###  Trabalhando com permissionamento de páginas e componentes
-
-Em desenvolvimento...
-
-
-### Trabalhando com i18n
-
-Em desenvolvimento...
-
-### Trabalhando com páginas públicas
-
-Em desenvolvimento...

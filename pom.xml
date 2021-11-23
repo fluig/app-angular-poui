@@ -8,8 +8,8 @@
 	<version>1.0.0</version>
 	<packaging>war</packaging>
 
-	<name>Universo TOTVS APP PO UI</name>
-	<description>Universo TOTVS APP PO UI</description>
+	<name>TOTVS APP ANGULAR PO UI</name>
+	<description>TOTVS APP ANGULAR PO UI</description>
 
 	<build>
 		<plugins>
@@ -19,7 +19,7 @@
 				<configuration>
 					<filesets>
 						<fileset>
-							<directory>src/main/universo-totvs-app/node_modules</directory>
+							<directory>src/main/angular-app/node_modules</directory>
 							<followSymlinks>false</followSymlinks>
 						</fileset>
 					</filesets>
@@ -58,8 +58,8 @@
 					</execution>
 				</executions>
 				<configuration>
-					<nodeVersion>v10.19.0</nodeVersion>
-					<workingDirectory>src/main/universo-totvs-app</workingDirectory>
+					<nodeVersion>v10.23.1</nodeVersion>
+					<workingDirectory>src/main/angular-app</workingDirectory>
 				</configuration>
 			</plugin>
 		</plugins>

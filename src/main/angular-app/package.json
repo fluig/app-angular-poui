@@ -1,5 +1,5 @@
 {
-  "name": "universo-totvs-app",
+  "name": "angular-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "./node_modules/.bin/ng",
