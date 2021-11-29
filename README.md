@@ -9,8 +9,8 @@ Abaixo estão os passos necessários para realizar essa técnica com todas as co
 ---
 **NOTA**
 
-Essa é uma **Versão Beta** de uma widget utilizando o framework Angular. Este projeto não possui suporte técnico do time do Fluig. Ele é somente um exemplo de como podemos adicionar uma aplicação Angular utilizando a biblioteca PO UI dentro do Fluig Plataforma. Ele não é atualizado constantemente e pode ficar depreciado ao longo do tempo. Sinta-se à vontade para colaborar com esse repositório e ajudar a evoluí-lo.
-
+Nesta documentação contém um exemplo de construção de widget com framework Angular, que também pode ser usada nos demais frameworks similares. 
+Essa é uma **versão beta** liberada apenas para parceiros de desenvolvimento Fluig. Caso encontre algum problema, orientamos reportar para a equipe de Parceiros do Fluig.
 ---
 
 
