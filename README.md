@@ -16,6 +16,8 @@ Essa é uma **versão beta** liberada apenas para parceiros de desenvolvimento F
 
 ## Pré requisitos
 
+O projeto foi testado e validado com as versões abaixo. Versões superiores ou inferiores podem ser utilizadas porém erros/problemas podem acontecer.
+
 - Node 10.15.x
 - NPM 6.4.x
 - Angular CLI: 7.1.3
@@ -91,17 +93,6 @@ O primeiro `execution` deve realizar a instalação do node e do npm. Então dev
 Depois devemos adicionar todos os passos para executar a instalação e compilação do nosso projeto, chamando os `scripts` npm configurados no **package.json**.
 
 ```xml
-<!-- Registry NPM para encontrar os pacotes do fluig -->
-<execution>
-  <id>npm set registry</id>
-  <goals>
-    <goal>npm</goal>
-  </goals>
-  <configuration>
-    <arguments>set registry http://nexus.fluig.com/repository/npm-group/</arguments>
-  </configuration>
-</execution>
-
 <!-- Instalação das dependências -->
 <execution>
   <id>npm install</id>
@@ -151,7 +142,7 @@ Devemos agora configurar o APP Angular para funcionar dentro da widget, para iss
 ### Passo 5 - Configurando APP para Paths dinâmicos
 
 
-Precisamos primeiro adicionar o arquivo [app.config.ts](https://github.com/fluig/app-angular-poui/blob/master/src/main/angular-app/src/app/app.config.ts) no projeto e depois configurar no módulo principal da nossa aplicação.
+Precisamos primeiro adicionar o arquivo [app.config.ts](https://github.com/fluig/app-angular-poui/blob/master/src/main/angular-app/src/app/app.config.ts) no projeto e depois configurar no [módulo principal](https://github.com/fluig/app-angular-poui/blob/master/src/main/angular-app/src/app/app.module.ts) da nossa aplicação.
 
 ```ts
 ...
@@ -171,6 +162,10 @@ Isso garante que o APP funcione em qualquer rota ou página do fluig, inclusive 
 
 
 Agora precisamos adicionar a tag principal da aplicação na **view.ftl** da widget. Esse arquivo se comportará como o **index.html** de uma aplicação Angular padrão.
+
+**Nota**
+
+Deve ser incluído somente a **tag principal** da sua aplicação, `<app-root>` e os scripts e estilos gerados. Tags como `<html>`, `<body>`, `<head>`, `<title>` e etc **não** devem ser incluídas na **view.ftl** da widget.
 
 ```html
 ...
