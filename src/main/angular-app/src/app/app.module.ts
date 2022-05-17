@@ -8,6 +8,7 @@ import { APP_CONFIG } from './app.config';
 import { ProcessManagementService } from './services/process-management.service';
 import { FluigOauthService } from './services/fluig-oauth.service';
 import { ProductsConverterService } from './services/products-converter.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProductsConverterService } from './services/products-converter.service'
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: APP_CONFIG.APP_BASE || '/' },
