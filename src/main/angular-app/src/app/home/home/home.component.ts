@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PoChartType } from '@po-ui/ng-components';
 import { PoDialogService } from '@po-ui/ng-components';
-import { PoPieChartSeries } from '@po-ui/ng-components';
+import { PoChartSerie } from '@po-ui/ng-components';
 
 @Component({
   selector: 'app-home',
@@ -12,20 +12,20 @@ import { PoPieChartSeries } from '@po-ui/ng-components';
 export class HomeComponent implements OnInit {
   chartType: PoChartType = PoChartType.Pie;
 
-  lowProducts: Array<PoPieChartSeries> = [
-    { category: 'Envelope 16x22', value: 0.2, tooltip: 'Envelope 16x22 (Escritório)' },
-    { category: 'Grafite 0.5mm', value: 0.29, tooltip: 'Grafite 0.5mm (Escritório)' },
-    { category: 'Lápis de escrever', value: 0.32, tooltip: 'Lápis de escrever (Escritório)' },
-    { category: 'Caneta Azul', value: 0.58, tooltip: 'Caneta Azul (Escritório)' },
-    { category: 'Caneta Preta', value: 0.62, tooltip: 'Caneta Preta (Escritório)' }
+  lowProducts: Array<PoChartSerie> = [
+    { label: 'Envelope 16x22', data: 0.2, tooltip: 'Envelope 16x22 (Escritório)' },
+    { label: 'Grafite 0.5mm', data: 0.29, tooltip: 'Grafite 0.5mm (Escritório)' },
+    { label: 'Lápis de escrever', data: 0.32, tooltip: 'Lápis de escrever (Escritório)' },
+    { label: 'Caneta Azul', data: 0.58, tooltip: 'Caneta Azul (Escritório)' },
+    { label: 'Caneta Preta', data: 0.62, tooltip: 'Caneta Preta (Escritório)' }
   ];
 
-  highProducts: Array<PoPieChartSeries> = [
-    { category: 'Calculadora Científica', value: 50.29, tooltip: 'Calculadora Científica (Escritório)' },
-    { category: 'Apagador', value: 6.53, tooltip: 'Apagador (Escritório)' },
-    { category: 'Papel A4 - 500 Folhas', value: 6.22, tooltip: 'Papel A4 - 500 Folhas (Escritório)' },
-    { category: 'Caneta Marca Texto', value: 5.00, tooltip: 'Caneta Marca Texto (Escritório)' },
-    { category: 'Bloco Adesivo de Anotações - Post It', value: 3.22, tooltip: 'Bloco Adesivo de Anotações - Post It (Escritório)' }
+  highProducts: Array<PoChartSerie> = [
+    { label: 'Calculadora Científica', data: 50.29, tooltip: 'Calculadora Científica (Escritório)' },
+    { label: 'Apagador', data: 6.53, tooltip: 'Apagador (Escritório)' },
+    { label: 'Papel A4 - 500 Folhas', data: 6.22, tooltip: 'Papel A4 - 500 Folhas (Escritório)' },
+    { label: 'Caneta Marca Texto', data: 5.00, tooltip: 'Caneta Marca Texto (Escritório)' },
+    { label: 'Bloco Adesivo de Anotações - Post It', data: 3.22, tooltip: 'Bloco Adesivo de Anotações - Post It (Escritório)' }
   ];
 
   items: Array<any> = [
@@ -101,7 +101,7 @@ export class HomeComponent implements OnInit {
   showMeTheProduct(event: any) {
     this.poAlert.alert({
       title: 'Detalhes do produto',
-      message: `O produto ${event.category} custa R$ ${event.value}.`,
+      message: `O produto ${event.label} custa R$ ${event.data}.`,
       ok: () => {}
     });
   }
