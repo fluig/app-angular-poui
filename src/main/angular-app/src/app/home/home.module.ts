@@ -14,7 +14,7 @@ import { PoModule } from '@po-ui/ng-components';
     HomeRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    PoModule
+    PoModule,
   ],
   exports: [
     HomeComponent
